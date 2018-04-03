@@ -75,6 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if($count!=0){
      echo "<h1>Login Successful";
    }
+   else{
+     echo "<h1>Incorrect Infomration";
+   }
 $conn = null;
 ?>
 <hr>
