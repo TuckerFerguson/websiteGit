@@ -17,7 +17,7 @@ catch(PDOException $e)
   }
   $callurl = curl_init();
 
-curl_setopt($callurl , CURLOPT_URL, "http://localhost/SportEmpire/Website/forumpost.php");
+curl_setopt($callurl , CURLOPT_URL, "https://sleepy-spire-34324.herokuapp.com/forumpost.php");
 curl_setopt($callurl , CURLOPT_HEADER, 0);
 curl_exec($callurl);
 curl_close($callurl);
