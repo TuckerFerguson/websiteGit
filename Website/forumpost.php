@@ -51,7 +51,7 @@
 	<table style="width:100%">
 				<tr>
 				<td><img src="logo.png" alt="SportEmpire Logo">
-                    <h1><a href="forumpost.php">Create Your Own Post</a></h1><hr>
+                    <h1><a href="forum.php">Create Your Own Post</a></h1><hr>
                     <form action="Dao.php" method="post" id="usrform">
 			    Title: <input type="text" placeholder="Enter Title. . ." name="forumpost"/><br>
             <input type="submit">
