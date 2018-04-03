@@ -1,39 +1,176 @@
 body {
      background-color: lightblue;
+     font-family:helvetica;
 }
+a:hover {
+    color: rgb(255, 0, 106);
+}
+input[type=submit] {
+    border: 1px solid #f44c0e;
+    color: #fff;
+    background: tomato;
+    padding: 5px 20px;
+    border-radius: 3px;
+    margin:4px;
+}
+input[type=submit]:hover {
+    background: #f44c0e;
+}
+input[type=text] {
+        padding:1px;
+        border: 2px solid black;
+        }
 .TopBoxes{
      border: 3px solid black;
      text-align: center;
-     margin: 25px
-     background-color: azure;
+     background-color: beige;
+     margin-bottom: 20px;
 }
 .right{
-    bottom-align;
     text-align:center;
-    margin-top:10px;
     margin-bottom:5%;
     display: inline-block;
     vertical-align: text;
-    width: 15%;
-    height: 80%;
-    padding-top 30%;
+    width: 16%;
+    height: 90%;
     margin-left: 8%;
+    vertical-align:top;
     background-color: beige;
     border: 3px solid black; 
 }
-.left{
-    bottom-align;
+.TopBoxes table th{
+    border: 3px solid black;
+    border-bottom: none;
+}
+.righty{
+        text-align:left;
+        margin-bottom:5%;
+        display: inline-block;
+        padding-right:18px;
+        width: 16%;
+        font-size:10;
+        height: 800px;
+        margin-left: 8%;
+        vertical-align:top;
+        background-color: beige;
+        border: 3px solid black; 
+}
+.righty ul{
+    list-style-type: none;
+}
+.righty h1,h2{
     text-align:center;
-    padding-top 30%;
-    margin-top:10px;
+}
+.left{
+    text-align:center;
     margin-bottom:10%;
     display: inline-block;
-    width: 15%;
-    height: 80%;
+    width: 16%;
+    height: 600px;
+    vertical-align:top;
     margin-right: 8%;
-    margin-left: 5%;
+    margin-left: 3%;
     background-color: beige;
     border: 3px solid black; 
+}
+table td{
+    text-align:center;
+    display: table-cell;
+    padding: 4px;
+    border: 3px solid black;
+    background-image: url("background.gif");
+}
+.lefty{
+    text-align:center;
+    margin-top:10px;
+    margin-bottom:10%;
+    float:left;
+    display: table;
+    width: 25%;
+    padding: 2px;
+    height: 812px;
+    margin-right: 2%;
+    margin-left: 2%;
+    background-color: beige;
+    border: 3px solid black; 
+}
+.leftforum{
+    text-align:center;
+    margin-top:10px;
+    margin-bottom:10%;
+    float:left;
+    display: table;
+    width: 25%;
+    height: 812px;
+    margin-right: 2%;
+    margin-left: 2%;
+    background-color:lightgray;
+    border: 3px solid black; 
+}
+.leftforum img{
+    border: 3px solid black;
+    width: 14%;
+    float: right;
+    height:40px;
+    margin-right:6px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.leftforum a{
+    border:2px solid black;
+    color: white;
+    padding: 10px;
+    padding-bottom:24px;
+    background-color: mediumblue;
+    font-size: 16px;
+    font-family:helvetica;
+    text-align:right;
+}
+.leftforum a:hover{
+    color: red;
+}
+.leftforum table td{
+    text-align:center;
+    width: 25%;
+    height: 200px;
+    padding: 10px;
+    border: 3px solid black;
+    background-image: url("backgroundcourt.gif");
+}
+.left table td{
+    text-align:center;
+    display: table-cell;
+    width: 25%;
+    padding: 10px;
+    border: 3px solid black;
+    background-image: url("background.gif");
+}
+.lefty img{
+    border: 4px solid black;
+    width: 50%;
+    height: 90px;
+    border-radius: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.left img{
+    border: 4px solid black;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.TopBoxes table td{
+    background-color: rgb(228, 182, 182)
+}
+.TopBoxes img{
+    
+    border-style: 10px solid black;
+    width: 80%;
+    height: 60px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .logbox{
 text-align:center; 
@@ -42,30 +179,351 @@ text-align:center;
     margin-bottom:150px;
     display: inline-block;
     width: 50%;
+    font-size: 22px; 
     height: 40%;
+    padding-top:50px;
+    padding: 25px;
+    text-align: left;
     background-color: beige;
     border: 3px solid black;
 }
-.middle {
+.logbox form{
+    border: 3px solid black;
+    padding: 5px;
+    padding-left: 30px; 
+    background-color:lightgray;
+}
+.logbox a{
+    font-size:16px;
+    padding: 5px;
+    padding-right: 15%;
+    border:3px solid black;
+    background-color:lightgray;
+}
+.logbox img{
+    border: 3px solid black;
+    width: 35%;
+    float: right;
+    height:50%;
+    margin-top:50px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.finishedbox{
     text-align:center; 
-    margin-top:10px;
+        margin-top:30px;
+        margin-left:25%;
+        margin-bottom:150px;
+        display: inline-block;
+        width: 50%;
+        font-size: 22px; 
+        height: 40%;
+        padding-top:50px;
+        padding: 25px;
+        background-color: beige;
+        border: 3px solid black;
+    }
+    .finishedbox img{
+        border: 3px solid black;
+        width: 50%;
+        height:150px;
+        float: center;
+        margin-top:20px;
+        border-radius: 5%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .finishedbox a{
+        font-size: 16px;
+        text-align: center;
+        padding:10px;
+        padding-top: 20px;
+        line-height: 30px;
+    }
+    .finishedbox2{
+        text-align:center; 
+            margin-top:30px;
+            margin-left:25%;
+            margin-bottom:150px;
+            display: inline-block;
+            width: 50%;
+            font-size: 22px; 
+            height: 40%;
+            padding-top:50px;
+            padding: 25px;
+            background-color: beige;
+            border: 3px solid black;
+        }
+        .finishedbox2 img{
+            border: 3px solid black;
+            width: 30%;
+            height:150px;
+            float: right;
+            margin-top:20px;
+            border-radius: 5%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .finishedbox2 a{
+            font-size: 16px;
+            text-align: center;
+            padding:10px;
+            padding-top: 20px;
+            line-height: 30px;
+        }
+        .error {
+            color: #FF0000;
+        }
+        .finishedbox2 h1{
+            color:mediumblue;
+        }
+.middle {
+    text-align:left; 
     margin-bottom:20px; 
     display: inline-block;
-    width: 40%;
-    height: 80%;
+    width: 44%;
+    height: 600px;
     background-color: beige;
     border: 3px solid black;  
 }
+.middle div{
+    border:1px solid black;
+    height: 170px;
+    background-color: mediumblue;
+}
+.middle div h1{
+    color: white;
+}
+.middle div ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    border:3px solid black;
+}
+.middle div li{
+float:left;
+}
+.middle div li a{
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 16px;
+    text-decoration: none;
+    }
+.middle div li a:hover {
+    color: hotpink;
+}
+.middle img{
+    border: 3px solid black;
+    width: 26%;
+    float: right;
+    height:110px;
+    margin-right:6px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .news {
-    text-align:center; 
+    text-align:center;
+    font-size: 12px; 
+    line-height: 24px; 
     margin-top:10px;
-    margin-right: 13%
-    margin-bottom:10%; 
-    display: inline-block;
+    margin-right: 15%;
+    margin-bottom: 10%; 
+    float:right;
     background-color: beige;
-    width: 65%;
-    height: 80%;
+    width: 50%;
+    height: 800px;
     border: 3px solid black;  
+}
+.news div{
+    border:1px solid black;
+    height: 170px;
+    background-color: mediumblue;
+}
+.news div h1{
+    color: white;
+    padding-top: 20px;
+    font-size: 32px;
+}
+.news div ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    margin-top: 40px;
+    overflow: hidden;
+    background-color: #333333;
+    border:1px solid black;
+}
+.news div li{
+float:left;
+}
+.news div li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    font-size:18px;
+    text-decoration: none;
+    }
+.news div li a:hover {
+    color: hotpink;
+}
+.news img{
+    border: 3px solid black;
+    width: 26%;
+    float: right;
+    height:110px;
+    margin-right:6px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.forumnews table td{
+    text-align:left;
+    width: 25%;
+    height: 262px;
+    border: 3px solid black;
+    background-image: url("backgroundcourt.gif");
+}
+.forumnews{
+    text-align:center;
+    font-size: 12px; 
+    line-height: 12px; 
+    margin-top:10px;
+    margin-right: 10%;
+    margin-bottom: 10%; 
+    float:right;
+    background-color: beige;
+    width: 55%;
+    height: 100%;
+    border: 1px solid black;
+    background-color:mediumblue;
+}
+.forumnews table a{
+    background-color: mediumblue;
+    line-height:44px;
+    font-size:34px;
+    padding:11px;
+    color: white;
+}
+.forumnews table h1{
+    background-color: mediumblue;
+    line-height:44px;
+    font-size:34px;
+    padding:11px;
+    color: white;
+}
+.forumnews table form{
+    padding: 5px;
+    font-size: 18px;
+    padding-bottom: 40px;
+}
+.forumnews table textarea{
+    margin-bottom: 50px;
+    float: left;
+}
+.forumnews img{
+    border: 3px solid black;
+    width: 20%;
+    float: right;
+    margin-bottom:180px;
+    height:60px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.forumnews table td a:link{
+    text-align: left;
+}
+.forumnews #Info{
+    color:white;
+    background-color:red;
+    font-size:18px;
+    text-align:center;
+    line-height:22px;
+}
+.forumnews p{
+    border: 2px solid black;
+}
+.forumnews2 table td{
+    text-align:left;
+    width: 25%;
+    height: 815px;
+    border: 3px solid black;
+    background-image: url("backgroundcourt.gif");
+}
+.forumnews2{
+    text-align:center;
+    font-size: 12px; 
+    line-height: 12px; 
+    margin-top:10px;
+    padding: 2px;
+    margin-right: 10%;
+    margin-bottom: 10%; 
+    float:right;
+    background-color: beige;
+    width: 55%;
+    height: 820px;
+    border: 3px solid black;
+}
+.forumnews2 img{
+    border: 3px solid black;
+    width: 25%;
+    float: right;
+    margin-bottom:180px;
+    height:70px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -400px;
+}
+.forumnews2 h1{
+    margin-top: -394px;
+    background-color: mediumblue;
+    color: white;
+    padding:16px;
+}
+.forumnews2 table td a:link{
+    text-align: left;
+}
+.forumnews2 p{
+    border: 4px solid black;
+    font-size: 18px;
+    padding: 14px;
+    line-height:24px;
+    background-color: mediumblue;
+    color:white;
+}
+.forumnews div{
+    border:3px solid black;
+    font-size: 18px;
+    background-color:mediumblue;
+}
+.forumnews div h3{
+    font-size: 12px;
+    text-align: right;
+    color:black;
+}
+.forumnews div h1{
+    text-decoration: underline;
+    margin-top:-12px;
+}
+.forumnews div h2{
+    text-align:left;
+    font-size: 16px;
+    line-height:24px;
+    padding:30px;
+    color:black;
+}
+.forumnews div table{
+    font-size: 18px;
+    color: white;
 }
 .footer{
     position: fixed; 
