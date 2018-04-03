@@ -30,7 +30,7 @@
 			<hr>
 		<table style="width:100%">
 			<td><a href="newslink.php">
-			<img src="Baseball.gif" alt="Baseball"></a></td>
+			<img src="baseball.gif" alt="Baseball"></a></td>
 		</table>
 			<p>Small description of this baseball event</p>
 			<hr>
