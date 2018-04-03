@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      echo "<h1>Login Successful";
    }
    else{
-     echo "<h1>Incorrect Infomration";
+     echo "<h1>Incorrect Information</h1>";
    }
 $conn = null;
 ?>
