@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="StyleSheet.CSS">
@@ -72,11 +75,20 @@
 	<div class="footer">
 		<a href="login.php">  Login  </a>
 		<a href="forum.php">  Forum  </a>
-		<a href="index.html">  Main  </a>
+		<a href="index.php">  Main  </a>
 		<a href="newslink.php">  News  </a>
-		<a href="register.php">  Register  </a>
+		<a href="register.php">  Register &nbsp </a>
+   		<div class="copyright">
+	  		<?php if(isset($_SESSION['logged'])){
+			 echo "Logged in as: ";
+			 echo $_SESSION['logged'];
+  			 }else{
+    		 echo "<a href='login.php'> Not Logged In </a>";
+   			}
+   			?>
+  		 	<p>Copyright © 2018 SportsEmpire</p>
+		</div>
 	</div>
-	
 	
 </body>
 </html>
