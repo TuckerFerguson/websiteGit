@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
 <?php
- $nameErr = $passErr ="";
+ $nameErr = $passErr = $passCheck = $nameCheck = "";
  $name = $email = $pass = $comment = $website = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
@@ -51,10 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="finishedbox2">
  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
- Name: <input type="text" name="name" value="<?php echo $name;?>">
+ Name: <input type="text" name="name" value="<?php echo $nameCheck;?>">
      <span class="error"> <?php echo $nameErr;?></span>
      <br>
- Pasword: <input type="text" name="pass" value="<?php echo $pass;?>">
+ Pasword: <input type="text" name="pass" value="<?php echo $passCheck;?>">
 <span class="error"> <?php echo $passErr;?></span>
 <br>
        <input type="submit">

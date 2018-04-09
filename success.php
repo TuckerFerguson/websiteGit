@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
 <?php
- $nameErr = $passErr ="";
+ $nameErr = $passErr = $passCheck = $nameCheck = "";
  $name = $email = $pass = $comment = $website = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
@@ -51,10 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="finishedbox2">
  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
- Name: <input type="text" name="name" value="<?php echo $name;?>">
+ Name: <input type="text" name="name" value="<?php echo $nameCheck;?>">
      <span class="error"> <?php echo $nameErr;?></span>
      <br>
- Pasword: <input type="text" name="pass" value="<?php echo $pass;?>">
+ Pasword: <input type="text" name="pass" value="<?php echo $passCheck;?>">
 <span class="error"> <?php echo $passErr;?></span>
 <br>
        <input type="submit">
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $link = "register.php";
     $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   $sql = $conn->prepare('select userName, pass From user 
+   $sql = $conn->prepare('select username, pass From user 
    WHERE userName = :nameCheck AND pass = :passCheck');
    $sql->bindParam(':nameCheck', $nameCheck, PDO::PARAM_STR, 12);
    $sql->bindParam(':passCheck', $passCheck, PDO::PARAM_STR, 12);
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      echo "<h1>Login Successful</h1>";
    }
    else{
-     echo "<h1>Incorrect Information";
+     echo "<h1>Incorrect Information</h1>";
    }
 $conn = null;
 ?>
