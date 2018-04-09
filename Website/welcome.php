@@ -74,6 +74,7 @@ Email: <input type="text" name="email" value="<?php echo $emailCheck;?>">
 <?php
      if($success != ""){
         echo $success;
+        $_SESSION['logged'] = $nameCheck;
         echo "<br>";
         echo '<img src="thumbs.gif" alt="Good Job!">';
      }?>
