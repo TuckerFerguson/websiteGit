@@ -78,6 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if($count!=0){
      $_SESSION['logged'] = $nameCheck;
      echo "<h1>Login Successful</h1>";
+     echo '<a href="logout.php">Logout</a>';
    }
    else{
      echo "<h1>Incorrect Information</h1>";
