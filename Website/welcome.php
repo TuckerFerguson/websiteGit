@@ -11,8 +11,8 @@ session_start();
 </head>
 <body>
 <?php
- $nameErr = $emailErr = $passErr = $success = "";
- $name = $email = $gender = $comment = $website = "";
+ $nameErr = $emailErr = $passErr = $success = $passCheck =  "";
+ $name = $email = $nameCheck = $emailCheck = $comment = $website = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
       $nameErr = "Name is required";
@@ -21,7 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
 		$nameErr = "Only letters and white space allowed"; 
 	  }
-	}
+    }
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+      } else {
+        $emailCheck = test_input($_POST["email"]);
+        if (!filter_var($emailCheck, FILTER_VALIDATE_EMAIL)) {
+          $emailErr = "invalid email format"; 
+        }
+      }
     if (empty($_POST["pass"])) {
         $passErr = "password is required";
       } else {
@@ -32,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } else {
         $email = test_input($_POST["email"]);
       }
-      if (!empty($_POST["name"]) AND !empty($_POST["pass"]) AND !empty($_POST["email"])){
+      if (($passErr == "" ) AND ($emailErr == "") AND ($nameErr == "")){
           $success = "Congratulations you are Registered";
       }
 	}
@@ -57,7 +65,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						<td><img src="soccerlive.gif"></td>
 			</table>		</div>
     </div>
-    <div class="finishedbox">
+    <div class="finishedbox3">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+ Name: <input type="text" name="name" value="<?php echo $nameCheck;?>">
+     <span class="error"> <?php echo $nameErr;?></span>
+     <br>
+Email: <input type="text" name="email" value="<?php echo $emailCheck;?>">
+     <span class="error"> <?php echo $emailErr;?></span>
+     <br>
+ Pasword: <input type="text" name="pass" value="<?php echo $passCheck;?>">
+<span class="error"> <?php echo $passErr;?></span>
+<br>
+<?php
+     if($success != ""){
+        echo $success;
+        echo "<br>";
+        echo '<img src="thumbs.gif" alt="Good Job!">';
+     }?>
+       <input type="submit">
+       <img src="logo.gif">
+   <br>		
+   </form>
 <?php
         $host = "us-cdbr-iron-east-05.cleardb.net";
         $user = "b8640f06d7d235";
@@ -73,27 +101,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 catch(PDOException $e)
     {
-        echo $nameErr;
-        echo "<br>" ;
-        echo $passErr;
-        echo "<br>";
-        echo $emailErr;
-        echo "<br>";
+        echo "Something Went Wrong";
     }
 $conn = null;
 ?>
-<?php
-    echo $success;
-    echo $nameErr;
-    echo "<br>" ;
-    echo $passErr;
-    echo "<br>";
-    echo $emailErr;
-    echo "<br>";?>
-<img src="thumbs.gif" alt="Good Job!">
 <hr>
 <a href="forum.php">Continue to Forums</a>
+<hr>
 <a href="index.html">Back to Main Page</a>
+<hr>
 <a href="register.php">Go Back</a>
 </div>
 <div class="footer">

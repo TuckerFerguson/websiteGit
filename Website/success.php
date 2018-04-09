@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $nameErr = "Name is required";
     } else {
       $nameCheck = test_input($_POST["name"]);
-	  if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+	  if (!preg_match("/^[a-zA-Z ]*$/",$nameCheck)) {
 		$nameErr = "Only letters and white space allowed"; 
 	  }
 	}
