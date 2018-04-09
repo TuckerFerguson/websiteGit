@@ -46,7 +46,9 @@ session_start();
    		<div class="copyright">
 	  		<?php if(isset($_SESSION['logged'])){
 			 echo "Logged in as: ";
-			 echo $_SESSION['logged'];
+       echo $_SESSION['logged'];
+       echo '&nbsp';
+       echo '<a href="logout.php">Logout</a>';
   			 }else{
     		 echo "<a href='login.php'> Not Logged In </a>";
    			}
@@ -54,7 +56,6 @@ session_start();
   		 	<p>Copyright © 2018 SportsEmpire</p>
 		</div>
 	</div>
-	
 </body>
 </html>
 

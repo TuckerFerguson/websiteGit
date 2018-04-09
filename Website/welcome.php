@@ -15,30 +15,25 @@ session_start();
  $name = $email = $nameCheck = $emailCheck = $comment = $website = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
-      $nameErr = "Name is required";
-    } else {
+      $nameErr = "*Name is required";
+    } else{
       $nameCheck = test_input($_POST["name"]);
-	  if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-		$nameErr = "Only letters and white space allowed"; 
+	  if (!preg_match("/^[a-zA-Z ]*$/",$nameCheck)) {
+		$nameErr = "*Only letters and white space allowed"; 
 	  }
     }
     if (empty($_POST["email"])) {
-        $emailErr = "Email is required";
+        $emailErr = "*Email is required";
       } else {
         $emailCheck = test_input($_POST["email"]);
         if (!filter_var($emailCheck, FILTER_VALIDATE_EMAIL)) {
-          $emailErr = "invalid email format"; 
+          $emailErr = "*Must be valid email address"; 
         }
       }
     if (empty($_POST["pass"])) {
-        $passErr = "password is required";
+        $passErr = "*Password is required";
       } else {
         $passCheck = test_input($_POST["pass"]);
-      }
-      if (empty($_POST["email"])) {
-        $emailErr = "Email is required";
-      } else {
-        $email = test_input($_POST["email"]);
       }
       if (($passErr == "" ) AND ($emailErr == "") AND ($nameErr == "")){
           $success = "Congratulations you are Registered";
@@ -95,10 +90,12 @@ Email: <input type="text" name="email" value="<?php echo $emailCheck;?>">
             
     $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if(($emailErr == "") AND ($passErr == "") AND ($nameErr == "")){
     $sql = $conn->prepare("INSERT INTO user (username, email, pass)
     VALUES ('$_POST[name]','$_POST[email]','$_POST[pass]')");
     $sql->execute();
     }
+  }
 catch(PDOException $e)
     {
         echo "Something Went Wrong";
@@ -121,7 +118,9 @@ $conn = null;
    		<div class="copyright">
 	  		<?php if(isset($_SESSION['logged'])){
 			 echo "Logged in as: ";
-			 echo $_SESSION['logged'];
+       echo $_SESSION['logged'];
+       echo '&nbsp';
+       echo '<a href="logout.php">Logout</a>';
   			 }else{
     		 echo "<a href='login.php'> Not Logged In </a>";
    			}

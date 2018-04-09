@@ -15,15 +15,15 @@ session_start();
  $name = $email = $pass = $comment = $website = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
-      $nameErr = "Name is required";
+      $nameErr = "*Name is required";
     } else {
       $nameCheck = test_input($_POST["name"]);
 	  if (!preg_match("/^[a-zA-Z ]*$/",$nameCheck)) {
-		$nameErr = "Only letters and white space allowed"; 
+		$nameErr = "*Only letters and white space allowed"; 
 	  }
 	}
     if (empty($_POST["pass"])) {
-        $passErr = "password is required";
+        $passErr = "*Password is required";
       } else {
         $passCheck = test_input($_POST["pass"]);
       }
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						<td><img src="soccerlive.gif"></td>
 			</table>		</div>
     </div>
-    <div class="finishedbox2">
+    <div class="logbox">
  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
  Name: <input type="text" name="name" value="<?php echo $nameCheck;?>">
      <span class="error"> <?php echo $nameErr;?></span>
@@ -77,17 +77,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $count = $sql->rowCount();
    if($count!=0){
      $_SESSION['logged'] = $nameCheck;
-     echo "<h1>Login Successful</h1>";
+     echo "<h3>Login Successful</h3>";
      echo '<a href="logout.php">Logout</a>';
-   }
-   else{
-     echo "<h1>Incorrect Information</h1>";
+     echo "&nbsp";
+   }else if(($passErr == "") AND ($nameErr == "")){
+     echo "<h3>Incorrect Information</h3>";
    }
 $conn = null;
 ?>
-<hr>
-<a href="forum.php">Continue to Forums</a>
-<a href="index.html">Back to Main Page</a>
+<a href="forum.php">Forums</a>
+<a href="index.html">Back to Home</a>
 </div>
 <div class="footer">
 		<a href="login.php">  Login  </a>
@@ -98,7 +97,9 @@ $conn = null;
    		<div class="copyright">
 	  		<?php if(isset($_SESSION['logged'])){
 			 echo "Logged in as: ";
-			 echo $_SESSION['logged'];
+       echo $_SESSION['logged'];
+       echo '&nbsp';
+       echo '<a href="logout.php">Logout</a>';
   			 }else{
     		 echo "<a href='login.php'> Not Logged In </a>";
    			}

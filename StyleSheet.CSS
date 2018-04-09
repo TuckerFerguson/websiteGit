@@ -175,10 +175,10 @@ table td{
 .logbox{
 text-align:center; 
     margin-top:30px;
-    margin-left:25%;
+    margin-left:20%;
     margin-bottom:150px;
     display: inline-block;
-    width: 50%;
+    width: 55%;
     font-size: 22px; 
     height: 40%;
     padding-top:50px;
@@ -186,6 +186,9 @@ text-align:center;
     text-align: left;
     background-color: beige;
     border: 3px solid black;
+}
+.logbox h3{
+    color: mediumblue;
 }
 .logbox form{
     border: 3px solid black;
@@ -196,8 +199,9 @@ text-align:center;
 .logbox a{
     font-size:16px;
     padding: 5px;
-    padding-right: 15%;
-    border:3px solid black;
+    padding-right: 8%;
+    text-align: center;
+    border: 1px solid black;
     background-color:lightgray;
 }
 .logbox img{
@@ -602,4 +606,14 @@ float:left;
     margin-bottom: -100px;
     margin-right: 150px;
     color: darkblue;
+}
+.copyright a{
+    color:red;
+    border:2px solid black;
+    padding: 3px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+.copyright a:hover {
+    color: orange;
 }
