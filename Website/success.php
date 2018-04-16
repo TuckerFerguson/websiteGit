@@ -62,24 +62,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    <br>		
    </form>
 <?php
+        $salt = "123!";
         $host = "us-cdbr-iron-east-05.cleardb.net";
         $user = "b8640f06d7d235";
         $pass = "ccb83ca0";
         $db = "heroku_7a7e7d2a0823f6a";
         $link = "register.php";
+        $safePass = md5($passCheck . $salt);
     $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    $sql = $conn->prepare('select username, pass From user 
    WHERE userName = :nameCheck AND pass = :passCheck');
    $sql->bindParam(':nameCheck', $nameCheck, PDO::PARAM_STR, 12);
-   $sql->bindParam(':passCheck', $passCheck, PDO::PARAM_STR, 12);
+   $sql->bindParam(':passCheck', $safePass, PDO::PARAM_STR, 12);
    $sql->execute();
    $count = $sql->rowCount();
    if($count!=0){
      $_SESSION['logged'] = $nameCheck;
      echo "<h3>Login Successful</h3>";
      echo '<a href="logout.php">Logout</a>';
-     echo "&nbsp";
+     echo "&nbsp"; 
    }else if(($passErr == "") AND ($nameErr == "")){
      echo "<h3>Incorrect Information</h3>";
    }

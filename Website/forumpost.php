@@ -1,8 +1,15 @@
-<?php
-session_start(); 
+<?php 
+session_start();
 ?>
+<?php
+ if (!isset($_SESSION["logged"]))
+ {
+	header("location: forum.php");
+ }
+ ?>
 <html>
 <head>
+<script src="jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="StyleSheet.CSS">
 <title> SportsEmpire </title>
 <link rel="icon" 

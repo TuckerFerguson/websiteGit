@@ -20,6 +20,10 @@ input[type=text] {
         padding:1px;
         border: 2px solid black;
         }
+input[type=password] {
+            padding:1px;
+            border: 2px solid black;
+            }
 .TopBoxes{
      border: 3px solid black;
      text-align: center;
@@ -311,6 +315,9 @@ text-align:center;
             background-color: beige;
             border: 3px solid black;
             }
+            .finishedbox3 text{
+                color:mediumblue;
+            }
             .finishedbox3 form{
                 border: 3px solid black;
                 padding: 5px;
@@ -339,7 +346,7 @@ text-align:center;
     margin-bottom:20px; 
     display: inline-block;
     width: 44%;
-    height: 750px;
+    height: 800px;
     background-color: beige;
     border: 3px solid black;  
 }
@@ -365,9 +372,10 @@ float:left;
 .middle div li a{
     display: block;
     color: white;
-    text-align: center;
-    font-size: 14px;
-    padding: 16px;
+    text-align: left;
+    font-size: 20px;
+    padding: 10px;
+    margin-top:-2px;
     text-decoration: none;
     }
 .middle div li a:hover {

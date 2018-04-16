@@ -2,12 +2,24 @@
 session_start(); 
 ?>
 <html>
-	<head>		
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">		
 		<link rel="stylesheet" type="text/css" href="StyleSheet.CSS">
+		<script src="jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 		<title> SportsEmpire </title>
 		<link rel="icon" 
       	type="image" 
       	href="https://previews.123rf.com/images/martialred/martialred1601/martialred160100213/51673234-number-1-one-fan-hand-glove-with-finger-raised-flat-vector-icon.jpg">
+		  <style>
+      .fancy {
+        font-family: 'Lobster';
+		font-size: 36px;
+		color:white;
+		margin-bottom: 48px;
+		text-decoration:underline;
+      		}
+    </style>
 	</head>
 	<body>
 		<div class="TopBoxes">
@@ -22,7 +34,11 @@ session_start();
 							<td><img src="baselive.gif"></td>
 							<td><img src="footlive.gif"></td>
 							<td><img src="soccerlive.gif"></td>
-				</table>		</div>
+				</table>						
+				</div>
+				<script>
+				$onload
+				</script>
 		<div class="left">
 				<table style="width:100%">
 						<tr>
@@ -42,11 +58,11 @@ session_start();
 		</div>
 		<div class="middle">
 			<div><img src="logo.png" alt="SportEmpire Logo">
-			<h1>SportEmpire Welcomes You!</h1>
+			<p class="fancy">SportEmpire Welcomes You!</p>
 			<ul>
 				<li><a href="login.php">Member Login</a></li>
 				<li><a href="register.php">New to SportEmpire?</a></li>
-				<li><a href="newslink.php">Sports News</a></li>
+				<li><a href="newslink.ph">Sports News</a></li>
 			</ul>
 			</div>
 			<ul>

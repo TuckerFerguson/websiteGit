@@ -4,10 +4,21 @@ session_start();
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="StyleSheet.CSS">
+<script src="jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <title> SportsEmpire </title>
 <link rel="icon" 
       type="image" 
       href="https://previews.123rf.com/images/martialred/martialred1601/martialred160100213/51673234-number-1-one-fan-hand-glove-with-finger-raised-flat-vector-icon.jpg">
+	 <?php if (!isset($_SESSION["logged"]))
+ 	{?> <script>
+	$(document).ready(function(){
+    $(".forumnews").click(function(){
+        alert("Must be Logged in to Post");
+    });
+});
+	 <?php } ?>
+</script>
 </head>
 <body>
 	<div class="TopBoxes">

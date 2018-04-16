@@ -27,9 +27,12 @@ session_start();
 	</div>
 	<div class="logbox">
 			<form action="welcome.php" method="post">
-					Name: <input type="text" placeholder="Please enter name" name="name"/><br>
-					E-mail: <input type="text" placeholder="Take our emails" name="email"/><br>
-					Password: <input type="text" placeholder="Keep your account safe" name="pass"/><br>
+					<label for="name">Enter your name:</label>
+					<input type="text"  id="name" placeholder="Please enter name" name="name"/><br>
+					<label for="email">Enter your email:</label>	
+					<input type="text" id="email" placeholder="Take our emails" name="email"/><br>
+					<label for="pass">Enter your password:</label>
+					<input type="password" id="pass" placeholder="Keep your account safe" name="pass"/><br>
 					<input type="submit">
 					<img src="logo.gif">
 				</form>			

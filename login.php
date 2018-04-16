@@ -11,6 +11,7 @@ session_start();
 </head>
 <body>
 	<div class="TopBoxes">
+
 		<table style="width:100%">
 						<tr>
 						<th>Basketball</th>
@@ -27,8 +28,10 @@ session_start();
 	</div>
 	<div class="logbox">
 			<form action="success.php" method="post">
-			Name: <input type="text" placeholder="Please enter name" name="name"/><br>
-			Password: <input type="text" placeholder="Safe and Secure" name="pass"/><br>
+			<label for="name">Enter your name:</label>
+			<input type="text" id="name" placeholder="Please enter name" name="name"/><br>
+			<label for="pass">Enter your password:</label>
+			<input type="password" id="pass" placeholder="Safe and Secure" name="pass"/><br>
 			<input type="submit">
 			<img src="logo.gif">
 		</form>

@@ -83,17 +83,18 @@ Email: <input type="text" name="email" value="<?php echo $emailCheck;?>">
    <br>		
    </form>
 <?php
+        $salt = "123!";
         $host = "us-cdbr-iron-east-05.cleardb.net";
         $user = "b8640f06d7d235";
         $pass = "ccb83ca0";
         $db = "heroku_7a7e7d2a0823f6a";
         try { 
-            
+    $safePass = md5($_POST['pass'] . $salt);
     $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     if(($emailErr == "") AND ($passErr == "") AND ($nameErr == "")){
     $sql = $conn->prepare("INSERT INTO user (username, email, pass)
-    VALUES ('$_POST[name]','$_POST[email]','$_POST[pass]')");
+    VALUES ('$_POST[name]','$_POST[email]','$safePass')");
     $sql->execute();
     }
   }
