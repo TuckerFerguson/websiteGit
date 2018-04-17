@@ -5,6 +5,12 @@ body {
 a:hover {
     color: rgb(255, 0, 106);
 }
+button{
+    float: right;
+}
+button:hover{
+    color: rgb(255, 0, 106);
+}
 input[type=submit] {
     border: 1px solid #f44c0e;
     color: #fff;

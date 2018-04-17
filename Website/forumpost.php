@@ -10,6 +10,7 @@ session_start();
 <html>
 <head>
 <script src="jquery-3.3.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="StyleSheet.CSS">
 <title> SportsEmpire </title>
 <link rel="icon" 
@@ -80,27 +81,35 @@ session_start();
             $query->execute();
             ?>
             <div>
-            <table style="width:100%">
-            <?php
+				
+				<table class="post" style='width:100%'>
+				<?php
             while ($row = $query->fetch(PDO::FETCH_ASSOC))
-            {   
-                $first = $row['title'];
+			{  
+				$first = $row['title'];
                 $second = $row['post'];
                 $third = $row['date'];
-                echo '<tr><td>';
+				echo '<tr><td>';
                 echo '<h1>';
                 echo "$first";
                 echo'</h1>';
+				echo "<button>Close Topic</button>";
                 echo '<hr><h2>';
                 echo "$second";
                 echo '</h2><hr><h3>';
                 echo "$third";
                 echo '</h3>';
-                echo '</tr></td>';
+				echo '</tr></td>';
             }
             ?>
-            </table>
+			</table>
         </div>
+			<script>
+ $(document).on('click', 'button', function () {
+     $(this).closest('tr').remove();
+     return false;
+ });
+	   </script>
 	</div>
 	<div class="footer">
 		<a href="login.php">  Login  </a>
