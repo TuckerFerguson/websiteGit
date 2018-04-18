@@ -9,7 +9,6 @@
     $sql = "INSERT INTO forum (title, post, date)
     VALUES ('$_POST[forumpost]', '$_POST[forumP]', now())";
     $conn->exec($sql);
-    echo "Post Successful";
   }
 catch(PDOException $e)
   {
